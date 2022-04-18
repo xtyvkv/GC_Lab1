@@ -16,12 +16,12 @@ namespace GC_Lab1
                 var inputInt = 0;
 
                 Console.WriteLine();
-                Console.WriteLine("Hello, " + name + "! Please enter an integer between 1 and 100.");
+                Console.WriteLine($"Hello, {name}! Please enter an integer between 1 and 100.");
                 var input = Console.ReadLine();
 
                 if (!int.TryParse(input, out inputInt) || inputInt <= 0 || inputInt > 100)
                 {
-                    Console.WriteLine("Incorrect input, " + name + ".");
+                    Console.WriteLine($"Incorrect input, {name}.");
                 }
                 else
                 {
