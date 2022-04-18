@@ -22,21 +22,22 @@ namespace GC_Lab1
             }
             else
             {
+                Console.WriteLine($"Thank you, {name}.");
                 if (inputInt % 2 == 0)
                 {
                     if (inputInt >= 2 && inputInt > 60)
                     {
-                        Console.WriteLine("Thank you, " + name + ". " + $"You said {inputInt}, which is even and greater than 60.");
+                        Console.WriteLine($"{inputInt} is even and greater than 60.");
                     }
                     else
                     {
                         if (inputInt <= 24)
                         {
-                            Console.WriteLine("Thank you, " + name + ". " + $"You said {inputInt}, which is even and less than 25.");
+                            Console.WriteLine($"{inputInt} is even and less than 25.");
                         }
                         else
                         {
-                            Console.WriteLine("Thank you, " + name + ". " + $"You said {inputInt}, which is even and between 26 and 60 inclusive.");
+                            Console.WriteLine($"{inputInt} is even and between 26 and 60 inclusive.");
                         }
                     }
                 }
@@ -44,11 +45,11 @@ namespace GC_Lab1
                 {
                     if (inputInt < 60)
                     {
-                        Console.WriteLine("Thank you, " + name + ". " + $"You said {inputInt}, which is odd and less than 60.");
+                        Console.WriteLine($"{inputInt} is odd and less than 60.");
                     }
                     else
                     {
-                    Console.WriteLine("Thank you, " + name + ". " + $"You said {inputInt}, which is odd and greater than 60.");
+                    Console.WriteLine($"{inputInt} is odd and greater than 60.");
                     }
                 }
 
