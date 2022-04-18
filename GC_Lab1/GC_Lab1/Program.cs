@@ -6,59 +6,71 @@ namespace GC_Lab1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter your name.");
-            string name = Console.ReadLine();
-            
-            var inputInt = 0;
+            bool go = true;
 
-            Console.WriteLine("Hello, " + name + "! Please enter an integer between 1 and 100.");
-            var input = Console.ReadLine();
+            while (go == true)
+            {
+                Console.WriteLine("Please enter your name.");
+                string name = Console.ReadLine();
 
-            if (!int.TryParse(input, out inputInt) || inputInt <= 0 || inputInt > 100)
-            {
-                Console.WriteLine("Incorrect input, " + name + ".");
-                Console.WriteLine("Please enter an integer between 1 and 100.");
-                /* figure out how to restart cuz your previous idea flopped HARD */
-            }
-            else
-            {
-                Console.WriteLine($"Thank you, {name}.");
-                if (inputInt % 2 == 0)
+                var inputInt = 0;
+
+                Console.WriteLine();
+                Console.WriteLine("Hello, " + name + "! Please enter an integer between 1 and 100.");
+                var input = Console.ReadLine();
+
+                if (!int.TryParse(input, out inputInt) || inputInt <= 0 || inputInt > 100)
                 {
-                    if (inputInt >= 2 && inputInt > 60)
-                    {
-                        Console.WriteLine($"{inputInt} is even and greater than 60.");
-                    }
-                    else
-                    {
-                        if (inputInt <= 24)
-                        {
-                            Console.WriteLine($"{inputInt} is even and less than 25.");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"{inputInt} is even and between 26 and 60 inclusive.");
-                        }
-                    }
+                    Console.WriteLine("Incorrect input, " + name + ".");
                 }
                 else
                 {
-                    if (inputInt < 60)
+                    Console.WriteLine();
+                    Console.WriteLine($"Thank you, {name}.");
+                    if (inputInt % 2 == 0)
                     {
-                        Console.WriteLine($"{inputInt} is odd and less than 60.");
+                        if (inputInt >= 2 && inputInt > 60)
+                        {
+                            Console.WriteLine($"{inputInt} is even and greater than 60.");
+                        }
+                        else
+                        {
+                            if (inputInt <= 24)
+                            {
+                                Console.WriteLine($"{inputInt} is even and less than 25.");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"{inputInt} is even and between 26 and 60 inclusive.");
+                            }
+                        }
                     }
                     else
                     {
-                    Console.WriteLine($"{inputInt} is odd and greater than 60.");
+                        if (inputInt < 60)
+                        {
+                            Console.WriteLine($"{inputInt} is odd and less than 60.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{inputInt} is odd and greater than 60.");
+                        }
                     }
                 }
-
-                /* figure this out too. extra credit baby!!!
-                
-                Console.WriteLine("Go again?");
-
-                */
+                Console.WriteLine();
+                Console.WriteLine("If you would like to try again, press Y.");
+                string goAgain = Console.ReadLine();
+                if (goAgain.ToUpper() != "Y")
+                {
+                    go = false;
+                }
+                else
+                {
+                    Console.WriteLine();
+                }
             }
+            Console.WriteLine();
+            Console.WriteLine("Bye!");
         }
     }
 }
